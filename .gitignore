@@ -1,0 +1,16 @@
+# signing material — NEVER commit (back these up privately)
+keys/
+*.jks
+*.keystore
+keystore.properties
+
+# build output
+build/
+dist/*.apk
+dist/build-info.json
+__pycache__/
+.DS_Store
+
+# generated web fingerprints are rebuilt by the build script
+app/web/manifest.json
+app/web/version.json

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seva Sagar · Control Panel</title>
+<meta name="theme-color" content="#0B0E13">
+<link rel="icon" href="assets/logo-512.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header class="top">
+    <div class="brand">
+      <img src="assets/logo-512.png" alt="">
+      <div>
+        <h1>Seva Sagar</h1>
+        <p>OTA Control Panel · भक्त सेवा ऐप</p>
+      </div>
+    </div>
+    <div class="top-right">
+      <span id="conn" class="chip grey">Not connected</span>
+      <button class="btn sm" id="btn-theme" title="Theme">◐</button>
+      <button class="btn sm" id="btn-settings">⚙ Settings</button>
+    </div>
+  </header>
+
+  <!-- connect -->
+  <section id="view-connect" class="view">
+    <div class="card hero-card">
+      <h2>Connect your GitHub</h2>
+      <p class="muted">The panel talks directly to the GitHub API from your browser. Your token is stored
+        only in this browser (optionally encrypted) and is never sent anywhere else. Publishing pushes a single
+        atomic commit to <code>docs/</code>, which GitHub Pages serves as the universal update URL.</p>
+      <div class="grid2">
+        <label>Personal access token
+          <input id="in-token" type="password" placeholder="github_pat_… or ghp_…" autocomplete="off">
+        </label>
+        <label>Repository
+          <input id="in-repo" type="text" value="glitchyapi/seva-sagar">
+        </label>
+      </div>
+      <div class="grid2">
+        <label>Branch <input id="in-branch" type="text" value="main"></label>
+        <label>Encrypt token with a passphrase (optional)
+          <input id="in-pass" type="password" placeholder="leave empty to store as-is">
+        </label>
+      </div>
+      <div class="row-btn">
+        <button class="btn primary" id="btn-connect">Connect</button>
+        <a class="btn" href="https://github.com/settings/tokens/new?scopes=repo&description=Seva%20Sagar%20OTA" target="_blank" rel="noopener">Create token ↗</a>
+      </div>
+      <p class="hint">Required scope: <code>repo</code> (classic) — or fine-grained with
+        <b>Contents: Read &amp; write</b> + <b>Administration: Read</b> on this repository.</p>
+      <div id="connect-err" class="err" hidden></div>
+    </div>
+  </section>
+
+  <!-- main -->
+  <section id="view-main" class="view" hidden>
+    <nav class="tabs">
+      <button class="tab is-on" data-v="dash">Dashboard</button>
+      <button class="tab" data-v="publish">Publish update</button>
+      <button class="tab" data-v="apk">App installer</button>
+      <button class="tab" data-v="broadcast">Notify users</button>
+      <button class="tab" data-v="history">History</button>
+      <button class="tab" data-v="manifest">Manifest</button>
+    </nav>
+
+    <!-- dashboard -->
+    <div class="pane" id="pane-dash">
+      <div class="stats" id="dash-stats"></div>
+      <div class="card">
+        <h3>Universal update URL</h3>
+        <p class="muted">This is the only URL the app reads. Point it anywhere else in
+          <em>App → Profile → App update → Advanced → Update source</em>.</p>
+        <div class="copyline"><code id="url-manifest"></code><button class="btn sm" data-copy="#url-manifest">Copy</button></div>
+        <div class="copyline"><code id="url-raw"></code><button class="btn sm" data-copy="#url-raw">Copy</button></div>
+        <div class="copyline"><code id="url-apk"></code><button class="btn sm" data-copy="#url-apk">Copy</button></div>
+      </div>
+      <div class="card">
+        <h3>Live manifest</h3>
+        <div id="dash-live" class="mono box">loading…</div>
+      </div>
+    </div>
+
+    <!-- publish -->
+    <div class="pane" id="pane-publish" hidden>
+      <div class="card">
+        <h3>1 · Choose the new app files</h3>
+        <p class="muted">Drop the <code>app/web</code> folder (or individual changed files). Only files whose
+          SHA-256 differs from the published manifest are uploaded — devotees download just those bytes.</p>
+        <div class="drop" id="drop">
+          <input type="file" id="file-input" multiple hidden>
+          <input type="file" id="dir-input" webkitdirectory directory multiple hidden>
+          <p><b>Drop files here</b></p>
+          <div class="row-btn center">
+            <button class="btn sm" id="pick-files">Select files</button>
+            <button class="btn sm" id="pick-dir">Select folder</button>
+            <button class="btn sm" id="load-bundle">Load from repo</button>
+          </div>
+        </div>
+        <div id="diff-summary" class="muted" style="margin-top:12px"></div>
+        <div id="diff-list" class="filetable"></div>
+      </div>
+
+      <div class="card">
+        <h3>2 · Release details</h3>
+        <div class="grid3">
+          <label>Content version <input id="rel-web" type="number" min="1" value="2"></label>
+          <label>Version name <input id="rel-name" type="text" value="1.0.1"></label>
+          <label>Channel
+            <select id="rel-channel"><option>stable</option><option>beta</option></select>
+          </label>
+        </div>
+        <label class="check"><input type="checkbox" id="rel-mandatory"> Mark as required (forces the update dialog)</label>
+        <div class="grid2">
+          <label>चangelog · हिन्दी<textarea id="rel-hi" rows="3" placeholder="• नया भंडारा बैनर डिज़ाइन&#10;• तेज़ सेवा डायरी"></textarea></label>
+          <label>Changelog · English<textarea id="rel-en" rows="3" placeholder="• New bhandara banner design&#10;• Faster seva diary"></textarea></label>
+        </div>
+        <div class="grid2">
+          <label>ਚੇਂਜਲਾਗ · ਪੰਜਾਬੀ<textarea id="rel-pa" rows="2"></textarea></label>
+          <label>चेंजलॉग · हरियाणवी<textarea id="rel-hr" rows="2"></textarea></label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3 · Mirrors <span class="muted small">(optional — HeOnlyFiles or any direct-link host)</span></h3>
+        <p class="muted">GitHub Pages + raw + jsDelivr are added automatically. Paste extra direct download links
+          per file if you also upload the patch to another host. The app tries them in order.</p>
+        <div id="mirror-list" class="filetable"></div>
+      </div>
+
+      <div class="row-btn">
+        <button class="btn primary big" id="btn-publish">🚀 Publish update</button>
+        <button class="btn" id="btn-dry">Preview manifest</button>
+      </div>
+      <div id="publish-log" class="mono box" hidden></div>
+    </div>
+
+    <!-- apk -->
+    <div class="pane" id="pane-apk" hidden>
+      <div class="card">
+        <h3>Publish a new app installer (APK)</h3>
+        <p class="muted">Needed only when the <b>native shell</b> changes (new permissions, new bridge features).
+          UI, logic and translations ship as content patches and never need a reinstall.</p>
+        <div class="drop" id="drop-apk">
+          <input type="file" id="apk-input" accept=".apk" hidden>
+          <p><b>Drop the signed APK</b></p>
+          <button class="btn sm" id="pick-apk">Select APK</button>
+        </div>
+        <div class="grid3" style="margin-top:14px">
+          <label>Version name <input id="apk-name" type="text" placeholder="1.1.0"></label>
+          <label>Version code <input id="apk-code" type="number" min="1" placeholder="2"></label>
+          <label>Release tag <input id="apk-tag" type="text" placeholder="v1.1.0"></label>
+        </div>
+        <label>Release notes<textarea id="apk-notes" rows="3"></textarea></label>
+        <label class="check"><input type="checkbox" id="apk-mandatory"> Require this installer update</label>
+        <div id="apk-info" class="muted"></div>
+        <div class="row-btn">
+          <button class="btn primary" id="btn-apk">Upload &amp; publish installer</button>
+        </div>
+        <div id="apk-log" class="mono box" hidden></div>
+      </div>
+    </div>
+
+    <!-- broadcast -->
+    <div class="pane" id="pane-broadcast" hidden>
+      <div class="card">
+        <h3>Send a notification to every devotee</h3>
+        <p class="muted">No push server needed: the announcement travels inside the manifest. Every app shows it
+          as a real device notification the next time it checks (on open, and every 6 hours).</p>
+        <div class="grid2">
+          <label>Title · शीर्षक<input id="bc-title" type="text" placeholder="विशाल भंडारा — 26 जनवरी"></label>
+          <label>Open screen
+            <select id="bc-route"><option value="home">Home</option><option value="seva">Seva</option>
+              <option value="bhandara">Bhandara</option><option value="update">Update</option><option value="add">Add seva</option></select>
+          </label>
+        </div>
+        <label>Message · संदेश<textarea id="bc-body" rows="3" placeholder="सतलोकाश्रम में विशाल भंडारा, सपरिवार पधारें।"></textarea></label>
+        <div class="grid3">
+          <label>Channel
+            <select id="bc-channel"><option value="bhandara">Bhandara &amp; events</option><option value="seva">Seva reminders</option><option value="updates">App updates</option></select>
+          </label>
+          <label>Expires (days) <input id="bc-days" type="number" value="7" min="1"></label>
+          <label>Importance
+            <select id="bc-priority"><option value="normal">Normal</option><option value="high">High</option></select>
+          </label>
+        </div>
+        <div class="row-btn">
+          <button class="btn primary" id="btn-broadcast">📣 Send to all devices</button>
+          <button class="btn danger" id="btn-bc-clear">Clear active announcement</button>
+        </div>
+        <div id="bc-log" class="mono box" hidden></div>
+      </div>
+    </div>
+
+    <!-- history -->
+    <div class="pane" id="pane-history" hidden>
+      <div class="card">
+        <h3>Published versions</h3>
+        <p class="muted">Rolling back re-publishes an older file set under a new version number, so every device
+          picks it up automatically on its next check.</p>
+        <div id="hist-list"></div>
+      </div>
+    </div>
+
+    <!-- manifest -->
+    <div class="pane" id="pane-manifest" hidden>
+      <div class="card">
+        <h3>manifest.json</h3>
+        <p class="muted">Advanced: edit the raw JSON the app consumes. Validate before saving.</p>
+        <textarea id="man-edit" class="mono" rows="22" spellcheck="false"></textarea>
+        <div class="row-btn">
+          <button class="btn" id="btn-man-validate">Validate</button>
+          <button class="btn primary" id="btn-man-save">Save manifest</button>
+        </div>
+        <div id="man-log" class="mono box" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>॥ राम सत नाम ॥</span>
+    <span class="muted">Seva Sagar · offline-first · no server, no tracking</span>
+  </footer>
+</div>
+
+<div id="toast"></div>
+<div id="modal-root"></div>
+
+<script src="gh.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

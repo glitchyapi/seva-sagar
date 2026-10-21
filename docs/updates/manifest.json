@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "app": "sevasagar",
+  "channel": "stable",
+  "latest": {
+    "version": "1.0.0",
+    "versionCode": 1,
+    "web": 1,
+    "published": "2026-10-21T17:19:14.406572Z",
+    "mandatory": false,
+    "size": 300292,
+    "notes": {
+      "hi": "पहला वर्शन — सेवा डायरी, भंडारा बैनर स्टूडियो, रिमाइंडर और स्मार्ट अपडेट।",
+      "en": "First release — seva diary, bhandara banner studio, reminders and smart updates.",
+      "pa": "",
+      "hr": ""
+    }
+  },
+  "shell": {
+    "version": "1.0.0",
+    "versionCode": 1,
+    "mandatory": false,
+    "apk": {
+      "url": "https://glitchyapi.github.io/seva-sagar/downloads/SevaSagar-v1.0.0.apk",
+      "size": 347589,
+      "sha256": "0f9bc0aa02f953877e29ba9fc67c489968aa5384731db220cf87e38373e1460d",
+      "mirrors": [
+        "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/downloads/SevaSagar-v1.0.0.apk",
+        "https://github.com/glitchyapi/seva-sagar/releases/download/v1.0.0/SevaSagar-v1.0.0.apk"
+      ]
+    }
+  },
+  "web": {
+    "version": 1,
+    "base": "https://glitchyapi.github.io/seva-sagar/updates/",
+    "files": [
+      {
+        "path": "assets/logo-192.png",
+        "sha256": "d86ccc3e08164c7c8645b5af5154dd8419c59bf86ba1c993da4ffb7eeff1a9ea",
+        "size": 22409,
+        "url": "files/d8/d86ccc3e08164c7c8645b5af5154dd8419c59bf86ba1c993da4ffb7eeff1a9ea",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/d8/d86ccc3e08164c7c8645b5af5154dd8419c59bf86ba1c993da4ffb7eeff1a9ea",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/d8/d86ccc3e08164c7c8645b5af5154dd8419c59bf86ba1c993da4ffb7eeff1a9ea"
+        ]
+      },
+      {
+        "path": "assets/logo-512.png",
+        "sha256": "b11623cce691ed2ce736cb1ec1b713f236ef13fb4b9a6cd2b8ce05c6be5a8373",
+        "size": 69510,
+        "url": "files/b1/b11623cce691ed2ce736cb1ec1b713f236ef13fb4b9a6cd2b8ce05c6be5a8373",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/b1/b11623cce691ed2ce736cb1ec1b713f236ef13fb4b9a6cd2b8ce05c6be5a8373",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/b1/b11623cce691ed2ce736cb1ec1b713f236ef13fb4b9a6cd2b8ce05c6be5a8373"
+        ]
+      },
+      {
+        "path": "assets/logo-light-180.png",
+        "sha256": "609e516c204393989b1a3374d27057b1fead04a206e97f5b866b5f38932f61bd",
+        "size": 24657,
+        "url": "files/60/609e516c204393989b1a3374d27057b1fead04a206e97f5b866b5f38932f61bd",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/60/609e516c204393989b1a3374d27057b1fead04a206e97f5b866b5f38932f61bd",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/60/609e516c204393989b1a3374d27057b1fead04a206e97f5b866b5f38932f61bd"
+        ]
+      },
+      {
+        "path": "assets/logo.svg",
+        "sha256": "91e5a09891255dbfbc98f10ccc05f0ab5052d13ac6488b0f78513906c35bdc77",
+        "size": 1570,
+        "url": "files/91/91e5a09891255dbfbc98f10ccc05f0ab5052d13ac6488b0f78513906c35bdc77",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/91/91e5a09891255dbfbc98f10ccc05f0ab5052d13ac6488b0f78513906c35bdc77",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/91/91e5a09891255dbfbc98f10ccc05f0ab5052d13ac6488b0f78513906c35bdc77"
+        ]
+      },
+      {
+        "path": "css/app.css",
+        "sha256": "a445f27d9cf0565ebd9938129f7eb62e74828ddb4f45d49a09fc9c2410509208",
+        "size": 27621,
+        "url": "files/a4/a445f27d9cf0565ebd9938129f7eb62e74828ddb4f45d49a09fc9c2410509208",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/a4/a445f27d9cf0565ebd9938129f7eb62e74828ddb4f45d49a09fc9c2410509208",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/a4/a445f27d9cf0565ebd9938129f7eb62e74828ddb4f45d49a09fc9c2410509208"
+        ]
+      },
+      {
+        "path": "index.html",
+        "sha256": "98539ab596d29d9a277ebd12ac9eb37c6b4fc8c2b3c21b9cb54e048a2bbb6d26",
+        "size": 4251,
+        "url": "files/98/98539ab596d29d9a277ebd12ac9eb37c6b4fc8c2b3c21b9cb54e048a2bbb6d26",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/98/98539ab596d29d9a277ebd12ac9eb37c6b4fc8c2b3c21b9cb54e048a2bbb6d26",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/98/98539ab596d29d9a277ebd12ac9eb37c6b4fc8c2b3c21b9cb54e048a2bbb6d26"
+        ]
+      },
+      {
+        "path": "js/app.js",
+        "sha256": "9bdaba3337ae6b9358a5deed2c8c4436fb4de4675364820dabe10425a711ecd8",
+        "size": 8093,
+        "url": "files/9b/9bdaba3337ae6b9358a5deed2c8c4436fb4de4675364820dabe10425a711ecd8",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/9b/9bdaba3337ae6b9358a5deed2c8c4436fb4de4675364820dabe10425a711ecd8",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/9b/9bdaba3337ae6b9358a5deed2c8c4436fb4de4675364820dabe10425a711ecd8"
+        ]
+      },
+      {
+        "path": "js/banner.js",
+        "sha256": "edebf9af0f807229e005fdfced1b34f5f30f6f403efb8766509b1bca33361389",
+        "size": 11712,
+        "url": "files/ed/edebf9af0f807229e005fdfced1b34f5f30f6f403efb8766509b1bca33361389",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/ed/edebf9af0f807229e005fdfced1b34f5f30f6f403efb8766509b1bca33361389",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/ed/edebf9af0f807229e005fdfced1b34f5f30f6f403efb8766509b1bca33361389"
+        ]
+      },
+      {
+        "path": "js/core.js",
+        "sha256": "45ec099318ad213407acba1a32bf73265e63895daab3a61773e1dd3fbaa274ce",
+        "size": 11904,
+        "url": "files/45/45ec099318ad213407acba1a32bf73265e63895daab3a61773e1dd3fbaa274ce",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/45/45ec099318ad213407acba1a32bf73265e63895daab3a61773e1dd3fbaa274ce",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/45/45ec099318ad213407acba1a32bf73265e63895daab3a61773e1dd3fbaa274ce"
+        ]
+      },
+      {
+        "path": "js/i18n.js",
+        "sha256": "0b5c1db6c9c9d491dd9f8eb4e8561a7964a05b428534338d51dc9e509d593a90",
+        "size": 31766,
+        "url": "files/0b/0b5c1db6c9c9d491dd9f8eb4e8561a7964a05b428534338d51dc9e509d593a90",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/0b/0b5c1db6c9c9d491dd9f8eb4e8561a7964a05b428534338d51dc9e509d593a90",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/0b/0b5c1db6c9c9d491dd9f8eb4e8561a7964a05b428534338d51dc9e509d593a90"
+        ]
+      },
+      {
+        "path": "js/screens.js",
+        "sha256": "395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86",
+        "size": 50703,
+        "url": "files/39/395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/39/395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/39/395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86"
+        ]
+      },
+      {
+        "path": "js/ui.js",
+        "sha256": "78d678da8fad07498b18eb373c931b951106bbc33ddc2bb29dcb9c83cbdb66ff",
+        "size": 14793,
+        "url": "files/78/78d678da8fad07498b18eb373c931b951106bbc33ddc2bb29dcb9c83cbdb66ff",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/78/78d678da8fad07498b18eb373c931b951106bbc33ddc2bb29dcb9c83cbdb66ff",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/78/78d678da8fad07498b18eb373c931b951106bbc33ddc2bb29dcb9c83cbdb66ff"
+        ]
+      },
+      {
+        "path": "js/update.js",
+        "sha256": "c73187f5068e0af577dbf439ffa4645bccf37a9d29ed46393cd48b4f1b0f7e1a",
+        "size": 21303,
+        "url": "files/c7/c73187f5068e0af577dbf439ffa4645bccf37a9d29ed46393cd48b4f1b0f7e1a",
+        "mirrors": [
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/c7/c73187f5068e0af577dbf439ffa4645bccf37a9d29ed46393cd48b4f1b0f7e1a",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/c7/c73187f5068e0af577dbf439ffa4645bccf37a9d29ed46393cd48b4f1b0f7e1a"
+        ]
+      }
+    ],
+    "deleted": []
+  },
+  "announcement": null,
+  "history": [
+    {
+      "web": 1,
+      "version": "1.0.0",
+      "at": "2026-10-21T17:19:14.406572Z",
+      "files": 13,
+      "bytes": 300292
+    }
+  ]
+}

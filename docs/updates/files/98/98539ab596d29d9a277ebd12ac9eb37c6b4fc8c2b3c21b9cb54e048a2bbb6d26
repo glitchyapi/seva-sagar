@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="hi" data-theme="dark" data-accent="green">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0E13">
+<title>Seva Sagar</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<!-- ───────────────────────── splash ───────────────────────── -->
+<div id="splash" class="splash">
+  <div class="splash-glow"></div>
+  <div class="splash-mark">
+    <svg viewBox="0 0 108 108" class="mark-svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="sgFl" x1="47" y1="24" x2="61" y2="44" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#FFD166"/><stop offset="1" stop-color="#FF7A18"/>
+        </linearGradient>
+        <linearGradient id="sgPc" x1="49" y1="46" x2="59" y2="66" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#6EE7A0"/><stop offset="1" stop-color="#16A34A"/>
+        </linearGradient>
+      </defs>
+      <circle class="mark-ring" cx="54" cy="54" r="40" fill="none" stroke="#22C55E" stroke-opacity=".25" stroke-width="1.6"/>
+      <g class="mark-lotus">
+        <path d="M31 59C40 59 49.5 62 54 66C45 68.5 36 66 31 59Z" fill="#16A34A" fill-opacity=".85"/>
+        <path d="M77 59C68 59 58.5 62 54 66C63 68.5 72 66 77 59Z" fill="#16A34A" fill-opacity=".85"/>
+        <path d="M41 50C48 53 52.5 59 54 66C46.5 64 42 58 41 50Z" fill="#22C55E"/>
+        <path d="M67 50C60 53 55.5 59 54 66C61.5 64 66 58 67 50Z" fill="#22C55E"/>
+        <path d="M54 46C58.5 53 58.5 60 54 66C49.5 60 49.5 53 54 46Z" fill="url(#sgPc)"/>
+      </g>
+      <path class="mark-flame" d="M54 24C57.5 30 61 32.5 61 36.5C61 40.6 57.9 44 54 44C50.1 44 47 40.6 47 36.5C47 32.5 50.5 30 54 24Z" fill="url(#sgFl)"/>
+      <path class="mark-wave" d="M32 74C37.3 70.5 42.7 77.5 48 74C53.3 70.5 58.7 77.5 64 74C69.3 70.5 74.7 77.5 79 74"
+            fill="none" stroke="#4ADE80" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="splash-name">सेवा सागर</div>
+  <div class="splash-sub">संत रामपाल जी महाराज · भक्त सेवा डायरी</div>
+  <div class="splash-bar"><i></i></div>
+</div>
+
+<!-- ───────────────────────── app ───────────────────────── -->
+<div id="app" class="app" hidden>
+  <header class="topbar" id="topbar"></header>
+  <main class="pages" id="pages">
+    <section class="page" id="page-home"></section>
+    <section class="page" id="page-seva"></section>
+    <section class="page" id="page-bhandara"></section>
+    <section class="page" id="page-profile"></section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="tab is-active" data-route="home"><span class="tab-ico" data-ico="home"></span><span class="tab-lbl" data-i18n="nav.home">होम</span></button>
+    <button class="tab" data-route="seva"><span class="tab-ico" data-ico="lotus"></span><span class="tab-lbl" data-i18n="nav.seva">सेवा</span></button>
+    <span class="tab-gap"></span>
+    <button class="tab" data-route="bhandara"><span class="tab-ico" data-ico="banner"></span><span class="tab-lbl" data-i18n="nav.bhandara">भंडारा</span></button>
+    <button class="tab" data-route="profile"><span class="tab-ico" data-ico="user"></span><span class="tab-lbl" data-i18n="nav.profile">प्रोफ़ाइल</span></button>
+    <button class="fab" id="fab" aria-label="add"><span data-ico="plus"></span></button>
+  </nav>
+</div>
+
+<div id="sheet-root"></div>
+<div id="dialog-root"></div>
+<div id="toast-root" class="toast-root"></div>
+<div id="update-banner" class="ubanner" hidden></div>
+
+<script src="js/core.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/banner.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/update.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

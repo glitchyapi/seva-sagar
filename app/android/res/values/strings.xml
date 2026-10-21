@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Seva Sagar</string>
+    <string name="app_short">Seva</string>
+    <string name="ch_seva_name">Seva Reminders</string>
+    <string name="ch_seva_desc">Daily reminders for your naam jaap, satsang and seva</string>
+    <string name="ch_update_name">App Updates</string>
+    <string name="ch_update_desc">New versions, patches and download progress</string>
+    <string name="ch_bhandara_name">Bhandara &amp; Events</string>
+    <string name="ch_bhandara_desc">Bhandara, satsang and event alerts</string>
+</resources>

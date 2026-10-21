@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="39%" r="72%">
+      <stop offset="0" stop-color="#14263A"/><stop offset="1" stop-color="#070C16"/>
+    </radialGradient>
+    <linearGradient id="fl" x1="47" y1="24" x2="61" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD166"/><stop offset="1" stop-color="#FF7A18"/>
+    </linearGradient>
+    <linearGradient id="pc" x1="49" y1="46" x2="59" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6EE7A0"/><stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+  </defs>
+  <rect width="108" height="108" rx="25" fill="url(#bg)"/>
+  <circle cx="54" cy="54" r="40" fill="none" stroke="#22C55E" stroke-opacity=".2" stroke-width="1.6"/>
+  <path d="M31 59C40 59 49.5 62 54 66C45 68.5 36 66 31 59Z" fill="#16A34A" fill-opacity=".85"/>
+  <path d="M77 59C68 59 58.5 62 54 66C63 68.5 72 66 77 59Z" fill="#16A34A" fill-opacity=".85"/>
+  <path d="M41 50C48 53 52.5 59 54 66C46.5 64 42 58 41 50Z" fill="#22C55E"/>
+  <path d="M67 50C60 53 55.5 59 54 66C61.5 64 66 58 67 50Z" fill="#22C55E"/>
+  <path d="M54 46C58.5 53 58.5 60 54 66C49.5 60 49.5 53 54 46Z" fill="url(#pc)"/>
+  <path d="M54 24C57.5 30 61 32.5 61 36.5C61 40.6 57.9 44 54 44C50.1 44 47 40.6 47 36.5C47 32.5 50.5 30 54 24Z" fill="url(#fl)"/>
+  <path d="M32 74C37.3 70.5 42.7 77.5 48 74C53.3 70.5 58.7 77.5 64 74C69.3 70.5 74.7 77.5 79 74"
+        fill="none" stroke="#4ADE80" stroke-width="3" stroke-linecap="round"/>
+</svg>
