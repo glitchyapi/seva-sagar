@@ -388,6 +388,7 @@
     var d = U.parseKey(ev.date);
     var dayBefore = U.addDays(d, -1);
     var hh = +(ev.time || '09:00').split(':')[0];
+    if (dayBefore < U.parseKey(U.today())) { dayBefore = d; }
     S.N.j('reminderUpsert', {
       id: 'bh-' + ev.id, hour: Math.max(7, hh - 2), minute: 0,
       days: [], title: ev.title, body: S.i18n.date(ev.date) + ' · ' + (ev.venue || ''),

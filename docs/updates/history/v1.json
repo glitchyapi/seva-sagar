@@ -6,9 +6,9 @@
     "version": "1.0.0",
     "versionCode": 1,
     "web": 1,
-    "published": "2026-10-21T17:19:14.406572Z",
+    "published": "2026-10-21T17:24:23.552972Z",
     "mandatory": false,
-    "size": 300292,
+    "size": 50765,
     "notes": {
       "hi": "पहला वर्शन — सेवा डायरी, भंडारा बैनर स्टूडियो, रिमाइंडर और स्मार्ट अपडेट।",
       "en": "First release — seva diary, bhandara banner studio, reminders and smart updates.",
@@ -23,7 +23,7 @@
     "apk": {
       "url": "https://glitchyapi.github.io/seva-sagar/downloads/SevaSagar-v1.0.0.apk",
       "size": 347589,
-      "sha256": "0f9bc0aa02f953877e29ba9fc67c489968aa5384731db220cf87e38373e1460d",
+      "sha256": "c4131d789fe966d74cd4dbd808f6734e6073075c2cf3894561f87f98f1eb633a",
       "mirrors": [
         "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/downloads/SevaSagar-v1.0.0.apk",
         "https://github.com/glitchyapi/seva-sagar/releases/download/v1.0.0/SevaSagar-v1.0.0.apk"
@@ -136,12 +136,12 @@
       },
       {
         "path": "js/screens.js",
-        "sha256": "395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86",
-        "size": 50703,
-        "url": "files/39/395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86",
+        "sha256": "a5feb7ad7f622154f9f9f2d8b78e82324218ed131ca99c4fdb0fc39fba35b061",
+        "size": 50765,
+        "url": "files/a5/a5feb7ad7f622154f9f9f2d8b78e82324218ed131ca99c4fdb0fc39fba35b061",
         "mirrors": [
-          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/39/395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86",
-          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/39/395e5a8b2160efbf1bdd353e34fa61de10de943b33cdd4220e7ce190aef2da86"
+          "https://raw.githubusercontent.com/glitchyapi/seva-sagar/main/docs/updates/files/a5/a5feb7ad7f622154f9f9f2d8b78e82324218ed131ca99c4fdb0fc39fba35b061",
+          "https://cdn.jsdelivr.net/gh/glitchyapi/seva-sagar@main/docs/updates/files/a5/a5feb7ad7f622154f9f9f2d8b78e82324218ed131ca99c4fdb0fc39fba35b061"
         ]
       },
       {
@@ -169,6 +169,13 @@
   },
   "announcement": null,
   "history": [
+    {
+      "web": 1,
+      "version": "1.0.0",
+      "at": "2026-10-21T17:24:23.552972Z",
+      "files": 1,
+      "bytes": 50765
+    },
     {
       "web": 1,
       "version": "1.0.0",

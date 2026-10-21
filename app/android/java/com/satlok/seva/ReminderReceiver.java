@@ -19,12 +19,18 @@ public final class ReminderReceiver extends BroadcastReceiver {
                     .put("title", intent.getStringExtra("title"))
                     .put("body", intent.getStringExtra("body"))
                     .put("route", intent.getStringExtra("route")));
-            // re-arm
+            // re-arm repeating reminders; one-shot event reminders retire themselves
             org.json.JSONArray arr = n.reminders();
+            org.json.JSONArray keep = new org.json.JSONArray();
             for (int i = 0; i < arr.length(); i++) {
                 JSONObject r = arr.getJSONObject(i);
-                if (id != null && id.equals(r.optString("id"))) { n.schedule(r); break; }
+                if (id != null && id.equals(r.optString("id"))) {
+                    if (r.optBoolean("once", false)) continue;
+                    n.schedule(r);
+                }
+                keep.put(r);
             }
+            if (keep.length() != arr.length()) n.saveReminders(keep);
         } catch (Exception ignored) { }
     }
 }

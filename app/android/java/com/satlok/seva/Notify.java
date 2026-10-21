@@ -216,6 +216,23 @@ public final class Notify {
         c.set(Calendar.MINUTE, minute);
         c.set(Calendar.SECOND, 0);
         c.set(Calendar.MILLISECOND, 0);
+
+        // one-shot event reminder pinned to a calendar date (bhandara)
+        String onDate = r.optString("date", "");
+        if (r.optBoolean("once", false) && onDate.length() == 10) {
+            try {
+                int y = Integer.parseInt(onDate.substring(0, 4));
+                int mo = Integer.parseInt(onDate.substring(5, 7)) - 1;
+                int d = Integer.parseInt(onDate.substring(8, 10));
+                c.set(Calendar.YEAR, y);
+                c.set(Calendar.MONTH, mo);
+                c.set(Calendar.DAY_OF_MONTH, d);
+            } catch (Exception ignored) { }
+            if (c.getTimeInMillis() <= now) return;   // already past — nothing to arm
+            arm(c.getTimeInMillis(), pi(r.optString("id"), r));
+            return;
+        }
+
         if (c.getTimeInMillis() <= now + 1000) c.add(Calendar.DAY_OF_YEAR, 1);
         if (days != null && days.length() > 0 && days.length() < 7) {
             for (int step = 0; step < 8; step++) {
@@ -226,8 +243,10 @@ public final class Notify {
                 c.add(Calendar.DAY_OF_YEAR, 1);
             }
         }
-        long at = c.getTimeInMillis();
-        PendingIntent p = pi(r.optString("id"), r);
+        arm(c.getTimeInMillis(), pi(r.optString("id"), r));
+    }
+
+    private void arm(long at, PendingIntent p) {
         AlarmManager am = alarm();
         try {
             boolean exact = Build.VERSION.SDK_INT < 31 || am.canScheduleExactAlarms();
